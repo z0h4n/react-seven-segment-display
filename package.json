@@ -1,0 +1,33 @@
+{
+  "name": "react-seven-segment-display",
+  "version": "1.0.0",
+  "description": "A Seven Segment Display Component for ReactJS",
+  "main": "SevenSegmentDisplay.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/z0h4n/react-seven-segment-display.git"
+  },
+  "keywords": [
+    "react",
+    "seven",
+    "segment",
+    "display",
+    "component",
+    "7",
+    "7-segment",
+    "seven-segment"
+  ],
+  "author": "z0h4n",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/z0h4n/react-seven-segment-display/issues"
+  },
+  "homepage": "https://github.com/z0h4n/react-seven-segment-display#readme",
+  "dependencies": {
+    "prop-types": "^15.6.2",
+    "react": "^16.6.3"
+  }
+}
