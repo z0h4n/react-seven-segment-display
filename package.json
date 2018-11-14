@@ -1,6 +1,6 @@
 {
   "name": "react-seven-segment-display",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A Seven Segment Display Component for ReactJS",
   "main": "SevenSegmentDisplay.js",
   "scripts": {
