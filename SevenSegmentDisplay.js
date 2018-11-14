@@ -22,8 +22,7 @@ export default class SevenSegmentDisplay extends React.Component {
     return {
       container: {
         display: 'inline-block',
-        width: `${width + (height * 2)}px`,
-        margin: '10px'
+        width: `${width + (height * 2)}px`
       },
       vSegmentHolder: {
         position: 'relative',
