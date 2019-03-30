@@ -1,76 +1,55 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import HSegment from './HSegment';
 import VSegment from './VSegment';
 
-const SEGMENT_MAP = {
-  "0": { a: true, b: true, c: true, d: true, e: true, f: true, g: false },
-  "1": { a: false, b: true, c: true, d: false, e: false, f: false, g: false },
-  "2": { a: true, b: true, c: false, d: true, e: true, f: false, g: true },
-  "3": { a: true, b: true, c: true, d: true, e: false, f: false, g: true },
-  "4": { a: false, b: true, c: true, d: false, e: false, f: true, g: true },
-  "5": { a: true, b: false, c: true, d: true, e: false, f: true, g: true },
-  "6": { a: true, b: false, c: true, d: true, e: true, f: true, g: true },
-  "7": { a: true, b: true, c: true, d: false, e: false, f: false, g: false },
-  "8": { a: true, b: true, c: true, d: true, e: true, f: true, g: true },
-  "9": { a: true, b: true, c: true, d: true, e: false, f: true, g: true }
-};
+const segmentMap = [
+  { a: true, b: true, c: true, d: true, e: true, f: true, g: false },
+  { a: false, b: true, c: true, d: false, e: false, f: false, g: false },
+  { a: true, b: true, c: false, d: true, e: true, f: false, g: true },
+  { a: true, b: true, c: true, d: true, e: false, f: false, g: true },
+  { a: false, b: true, c: true, d: false, e: false, f: true, g: true },
+  { a: true, b: false, c: true, d: true, e: false, f: true, g: true },
+  { a: true, b: false, c: true, d: true, e: true, f: true, g: true },
+  { a: true, b: true, c: true, d: false, e: false, f: false, g: false },
+  { a: true, b: true, c: true, d: true, e: true, f: true, g: true },
+  { a: true, b: true, c: true, d: true, e: false, f: true, g: true }
+];
 
-export default class SevenSegmentDisplay extends React.Component {
-  computeStyle() {
-    const { width, height } = this.props;
-    return {
-      container: {
-        display: 'inline-block',
-        width: `${width + (height * 2)}px`
-      },
-      vSegmentHolder: {
-        position: 'relative',
-        width: '100%',
-        height: `${width}px`
-      }
-    };
+export default function SevenSegmentDisplay({ width, height, onColor, offColor, value, style = {} }) {
+  width = +width;
+  height = +height;
+  value = +value;
+
+  if (value < 0 || value > 9) {
+    throw new Error('react-seven-segment-display: "value" prop must be between 0-9');
   }
 
-  onOff(segmentName) {
-    const { value, onColor, offColor } = this.props;
-    return SEGMENT_MAP[value][segmentName] ? onColor : offColor;
-  }
+  const { a, b, c, d, e, f, g } = segmentMap[value];
 
-  render() {
-    const { container, vSegmentHolder } = this.computeStyle();
-    const { width, height } = this.props;
+  style.display = 'inline-block';
+  style.width = `${width + (height * 2)}px`;
 
-    return (
-      <div style={container}>
-        <HSegment width={width} height={height} color={this.onOff('a')} />
-        <div style={vSegmentHolder}>
-          <VSegment width={height} height={width} color={this.onOff('f')} align="left" />
-          <VSegment width={height} height={width} color={this.onOff('b')} align="right" />
-        </div>
-        <HSegment width={width} height={height} color={this.onOff('g')} />
-        <div style={vSegmentHolder}>
-          <VSegment width={height} height={width} color={this.onOff('e')} align="left" />
-          <VSegment width={height} height={width} color={this.onOff('c')} align="right" />
-        </div>
-        <HSegment width={width} height={height} color={this.onOff('d')} />
+  return (
+    <div style={style}>
+      <HSegment width={width} height={height} color={a ? onColor : offColor} />
+      <div style={{ position: 'relative', width: '100%', height: `${width}px` }}>
+        <VSegment width={height} height={width} color={f ? onColor : offColor} align="left" />
+        <VSegment width={height} height={width} color={b ? onColor : offColor} align="right" />
       </div>
-    )
-  }
+      <HSegment width={width} height={height} color={g ? onColor : offColor} />
+      <div style={{ position: 'relative', width: '100%', height: `${width}px` }}>
+        <VSegment width={height} height={width} color={e ? onColor : offColor} align="left" />
+        <VSegment width={height} height={width} color={c ? onColor : offColor} align="right" />
+      </div>
+      <HSegment width={width} height={height} color={d ? onColor : offColor} />
+    </div>
+  )
 }
-
-SevenSegmentDisplay.propTypes = {
-  width: PropTypes.number,
-  height: PropTypes.number,
-  value: PropTypes.string,
-  onColor: PropTypes.string,
-  offColor: PropTypes.string
-};
 
 SevenSegmentDisplay.defaultProps = {
   width: 40,
   height: 5,
-  value: '0',
+  value: 0,
   onColor: 'rgba(255,0,0,1)',
   offColor: 'transparent'
 };

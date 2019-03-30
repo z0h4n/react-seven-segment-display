@@ -3,21 +3,28 @@
 <img src="image.png">
 
 ### Installation
-
+- NPM
 ```
 npm install --save react-seven-segment-display
 ```
+- Web
 
-### Import
-
+Download [react-seven-segment-display.min.js](https://raw.githubusercontent.com/z0h4n/react-seven-segment-display/umd-publish/dist/react-seven-segment-display.min.js)
 ```
-import SevenSegmentDisplay from 'react-seven-segment-display';
+<script src="react-seven-segment-display.min.js"></script>
 ```
 
 ### Usage
 
 ```
-<SevenSegmentDisplay value="0" onColor="rgba(0,255,0,1)" offColor="rgba(0,255,0,0.2)" width={50} height={5} />
+// ESM
+import SevenSegmentDisplay from 'react-seven-segment-display';
+
+// CommonJS
+const SevenSegmentDisplay = require('react-seven-segment-display').default;
+
+// Web
+var SevenSegmentDisplay = window.reactSevenSegmentDisplay.default;
 ```
 
 ### Props
