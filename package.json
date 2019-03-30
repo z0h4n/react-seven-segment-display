@@ -28,10 +28,6 @@
     "url": "https://github.com/z0h4n/react-seven-segment-display/issues"
   },
   "homepage": "https://github.com/z0h4n/react-seven-segment-display#readme",
-  "peerDependencies": {
-    "react": "^16.8.0",
-    "react-dom": "^16.8.0"
-  },
   "devDependencies": {
     "@babel/cli": "^7.2.3",
     "@babel/core": "^7.4.0",
