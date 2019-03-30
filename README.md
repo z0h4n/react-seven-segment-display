@@ -9,7 +9,7 @@ npm install --save react-seven-segment-display
 ```
 - Web
 
-Download [react-seven-segment-display.min.js](https://raw.githubusercontent.com/z0h4n/react-seven-segment-display/umd-publish/dist/react-seven-segment-display.min.js)
+Download [react-seven-segment-display.min.js](https://raw.githubusercontent.com/z0h4n/react-seven-segment-display/master/dist/react-seven-segment-display.min.js)
 ```
 <script src="react-seven-segment-display.min.js"></script>
 ```
