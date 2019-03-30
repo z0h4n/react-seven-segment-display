@@ -15,7 +15,7 @@ const segmentMap = [
   { a: true, b: true, c: true, d: true, e: false, f: true, g: true }
 ];
 
-export default function SevenSegmentDisplay({ width, height, onColor, offColor, value }) {
+export default function SevenSegmentDisplay({ width, height, onColor, offColor, value, style = {} }) {
   width = +width;
   height = +height;
   value = +value;
@@ -26,8 +26,11 @@ export default function SevenSegmentDisplay({ width, height, onColor, offColor, 
 
   const { a, b, c, d, e, f, g } = segmentMap[value];
 
+  style.display = 'inline-block';
+  style.width = `${width + (height * 2)}px`;
+
   return (
-    <div style={{ display: 'inline-block', width: `${width + (height * 2)}px` }}>
+    <div style={style}>
       <HSegment width={width} height={height} color={a ? onColor : offColor} />
       <div style={{ position: 'relative', width: '100%', height: `${width}px` }}>
         <VSegment width={height} height={width} color={f ? onColor : offColor} align="left" />
