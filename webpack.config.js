@@ -42,7 +42,7 @@ if (mode === 'production') {
     libraryTarget: 'umd'
   };
 
-  config.externals = ['react']
+  config.externals = { react: 'React' };
 }
 
 module.exports = config;

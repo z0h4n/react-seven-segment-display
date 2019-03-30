@@ -1,6 +1,6 @@
 {
   "name": "react-seven-segment-display",
-  "version": "2.0.2",
+  "version": "2.1.0",
   "description": "A Seven Segment Display Component for ReactJS",
   "main": "dist/react-seven-segment-display.min.js",
   "scripts": {
@@ -29,7 +29,6 @@
   },
   "homepage": "https://github.com/z0h4n/react-seven-segment-display#readme",
   "devDependencies": {
-    "@babel/cli": "^7.2.3",
     "@babel/core": "^7.4.0",
     "@babel/preset-env": "^7.4.2",
     "@babel/preset-react": "^7.0.0",
