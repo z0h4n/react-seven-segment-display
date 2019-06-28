@@ -1,16 +1,23 @@
-# A Seven Segment Display Component for ReactJS
+<h1 align="center">A Seven Segment Display Component for ReactJS</h1>
 
-<img src="image.png" width="100%">
+<p align="center">
+  <kbd>
+    <img src="image.png">
+  </kbd>
+</p>
+
 
 ### Installation
-- NPM
+NPM
+
 ```
 npm install --save react-seven-segment-display
 ```
 
-- Web
+Web
 
 Download [react-seven-segment-display.min.js](https://raw.githubusercontent.com/z0h4n/react-seven-segment-display/master/dist/react-seven-segment-display.min.js)
+
 ```
 <script src="react-seven-segment-display.min.js"></script>
 ```
