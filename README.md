@@ -1,8 +1,6 @@
-<h1 align="center">A Seven Segment Display Component for ReactJS</h1>
+# A Seven Segment Display Component for ReactJS
 
-<p align="center">
-  <img src="image.png">
-</p>
+<img src="image.png" width="100%">
 
 ### Installation
 - NPM
