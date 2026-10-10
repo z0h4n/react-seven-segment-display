@@ -1,6 +1,6 @@
 {
   "name": "react-seven-segment-display",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "A Seven Segment Display Component for ReactJS",
   "type": "module",
   "sideEffects": false,
@@ -11,7 +11,7 @@
     ".": {
       "import": {
         "types": "./dist/index.d.mts",
-        "default": "./dist/index.js"
+        "default": "./dist/index.mjs"
       },
       "require": {
         "types": "./dist/index.d.cts",
@@ -28,7 +28,7 @@
     "images": "npm run build && node scripts/generate-images.mjs",
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
-    "prepublishOnly": "npm run typecheck && npm test && npm run build"
+    "prepublishOnly": "npm run typecheck && npm test && npm run build && node scripts/check-package.mjs"
   },
   "repository": {
     "type": "git",
